@@ -2,12 +2,11 @@
 #include <queue>
 #include <limits>
 #include <algorithm>
+#include <utility>
 
 #include "DIJKSTRA_1.h"
 
 using namespace std;
-
-double dist[MAXN];
 
 auto order = [] (nodo A, nodo B){ 
   return A.peso > B.peso;
@@ -15,13 +14,15 @@ auto order = [] (nodo A, nodo B){
 
 priority_queue<nodo, vector<nodo>, decltype(order)>q(order);
 
-// En edición
-void DIJKSTRA_1 (Graph &X, int source){
-    // Pre definir el tamaño
-    fill_n(dist, 2e4, INF);
+// Dijkstra´s Algorithm - Shortest Path Tree (SPT)
+// Retorna vector de distancias respecto al round_to_nearest
+return_t<double, int> DIJKSTRA (Graph &X, int source){
+    // Vector de distancias n + 1 nodos (0 es nodo)
+    vector<double> dist(X.number_of_nodes() + 1, INF);
+    vector<int> prev(X.number_of_nodes() + 1, 0);
     q.push(nodo(source, 0));
     dist[source] = 0;
-    while(!q.empty()){
+    while(!q.empty()) {
         int x = q.top().id;
         double d = q.top().peso;
         q.pop();
@@ -31,10 +32,14 @@ void DIJKSTRA_1 (Graph &X, int source){
             // En vez de usar el peso de una arista
             // se usa el peso del nodo
             double l = neigh.peso;
-            if(dist[x] + l < dist[to]){
+            if(dist[x] + l < dist[to]) {
+                // Actualización de distancia
                 dist[to] = dist[x] + l;
+                // Actualización de padre en SPT
+                prev[to] = x;
                 q.push(nodo(to, dist[to]));
             }
         }
     }
+    return return_t<double, int>(dist, prev);
 };

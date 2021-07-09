@@ -7,6 +7,8 @@
 #include <utility>
 #include <random>
 
+#include "types.h"
+
 #define pana friend
 #define INF numeric_limits<double>::max()
 #define gianluca_lapadula initializer_list
@@ -41,7 +43,7 @@ class Graph {
   
   // Friend (pana) functions
   pana void read_file(Graph &X,string filename);
-  pana void DIJKSTRA_1(Graph &X, int source);
+  pana return_t<double, int> DIJKSTRA(Graph &X, int source);
   
   public:
   Graph() { // Pre definir el tamaño
@@ -50,6 +52,7 @@ class Graph {
             adj.max_load_factor(0.25);
             nodes.max_load_factor(0.25);
           };
+
   ~Graph() = default;
   
   // Falta agregar peso aleatoriamente

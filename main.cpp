@@ -18,6 +18,7 @@ Integrantes:
 #include "Graph.h"
 #include "functions.h"
 #include "DIJKSTRA_1.h"
+#include "GraphA/print_map.h"
 
 #define all(x) begin(x), end(x)
 
@@ -26,20 +27,40 @@ using namespace std;
 #include <queue>
 
 int main() {
-  
+
+  print_mapa();
+  /*
   Graph G;
   read_file(G, "scratch.txt");
   G.show_neighbors(1, 2, 3, 6);
 
-  cout << G.get_peso_nodo(0) << endl;
-  cout << G.get_peso_nodo(1) << endl;
-  cout << G.get_peso_nodo(2) << endl;
-  cout << G.get_peso_nodo(3) << endl;
-  cout << G.get_peso_nodo(6) << endl;
+  for(int i = 0; i < 7; i++){
+    if(i == 6 || i == 5) continue;
+    cout << "Nodo " << i << " " << G.get_peso_nodo(i) << endl;
+  }
 
-  DIJKSTRA_1(G, 1);
-  for(int i = 0; i <= 6; i++) cout << dist[i] << " ";
+  auto [dist, prev] = DIJKSTRA(G, 1);
+  for(int i = 0; i < 5; i++) {
+    cout << "Nodo " << i << " " << dist[i] << endl;
+  }
   cout << endl;
-  
+  */
   return 0;
 } 
+
+/*
+ Graph G;
+  read_file(G, "scratch.txt");
+  G.show_neighbors(1, 2, 3, 6);
+
+  for(int i = 0; i < 7; i++){
+    if(i == 6 || i == 5) continue;
+    cout << "Nodo " << i << " " << G.get_peso_nodo(i) << endl;
+  }
+
+  auto [dist, prev] = DIJKSTRA(G, 1);
+  for(int i = 0; i < 5; i++) {
+    cout << "Nodo " << i << " " << dist[i] << endl;
+  }
+  cout << endl;
+*/

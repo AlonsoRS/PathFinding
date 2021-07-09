@@ -1,3 +1,5 @@
+#pragma once
+
 #include <list>
 #include <algorithm>
 #include <iostream>
@@ -7,9 +9,9 @@ using namespace std;
 
 struct nodeA {
   pointA pos; //Posicion del nuevo nodo 
-  pointA parent; // nodo anterior
-  int distancia; //distancia del nodo
-  int costo; //costo del nuevo nodo
+  pointA parent; // Nodo anterior
+  int distancia; // Distancia del nodo
+  int costo; // Costo del nuevo nodo
 
   bool operator == (const nodeA& x) {return pos == x.pos;}
   bool operator == (const pointA& x) {return pos == x;}
