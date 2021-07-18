@@ -3,7 +3,6 @@
 #include <iostream>
 #include <list>
 #include "nodeA.h"
-#include "pointA.h"
 #include "mapA.h"
 #include <algorithm>
 #include <iterator>

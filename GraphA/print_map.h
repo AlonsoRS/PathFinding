@@ -3,15 +3,46 @@
 #include <list>
 #include <algorithm>
 #include <iostream>
+#include <stdlib.h>
 #include "AStar.h"
 
 using namespace std;
 
 void print_mapa () {
-  map m1;
-  pointA p1, e(11,11);
+  int x = 0, y = 0;
+  map m1(25,25);
+  pointA p1, e;
   Astar as;
   bool band = false;
+  
+  cout << "Ingresa una coordenada x para tu punto inicial: "; cin >> x;
+  while(x > 24){
+    system("clear");
+    cout << "Ingresa una coordenada x para tu punto inicial: "; cin >> x;
+  }
+
+  cout << "Ingresa una coordenada y para tu punto inicial: "; cin >> y;
+  while(y > 24){
+    system("clear");
+    cout << "Ingresa una coordenada y para tu punto inicialnicial: "; cin >> y;
+  }
+  p1.set_x(x);
+  p1.set_y(y);
+  
+  cout << "Ingresa una coordenada x para tu punto final: "; cin >> x;
+  while(x > 24){
+    system("clear");
+    cout << "Ingresa una coordenada x para tu punto final: "; cin >> x;
+  }
+
+  cout << "Ingresa una coordenada y para tu punto final: "; cin >> y;
+  while(y > 24){
+      system("clear");
+      cout << "Ingresa una coordenada y para tu punto final: "; cin >> y;
+  }
+
+  e.set_x(x);
+  e.set_y(y);
 
   if(as.buscar(p1, e, m1)){
     list<pointA> path_;

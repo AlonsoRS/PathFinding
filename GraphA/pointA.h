@@ -16,7 +16,7 @@ struct pointA {
 
   bool operator == (const pointA& p) {return p.x == x && p.y == y;}
   pointA operator + (const pointA& p) {return pointA(p.x + x, p.y + y);}
+
+  void set_x(int value){x = value;}
+  void set_y(int value){y = value;}
 };
-
-
-
