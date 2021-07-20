@@ -3,28 +3,28 @@
 # Proyecto 2021-1 - POO_2
 ##  __Searching Path__
 
-El presente proyecto es realizado por estudiantes del curso de Programación Orientada a Objetos 2. En esta primera entrega (solicitada por el profesor) se podrá observar dos implementaciones, donde ambas son utilizadas para hallar la ruta más corta. En primer lugar, utilizaremos el algoritmo Dijkstra que se basa en un archivo con información sobre nodos y pesos, para posteriormente interpretar la data y calcular la ruta más corta. En segundo lugar, se utilizará el algoritmo A* (A-estrella), el cual se basa en la interpretación de un mapa con valores binarios; donde este detecta velozmente la ruta más corta con espacios no permitidos, es decir restricciones en el mapa propuesto. Por último, se busca mostrar de forma gráfica ambas implementaciones para un mejor entendimiento (actualmente se continua trabajando en ello).
+El presente proyecto es realizado por estudiantes del curso de Programación Orientada a Objetos 2. En esta entrega se podrá observar dos implementaciones, donde ambas son utilizadas para hallar la ruta más corta. En primer lugar, utilizaremos el algoritmo Dijkstra que se basa en un archivo con información sobre nodos y pesos, para posteriormente interpretar la data y calcular la ruta más corta. En segundo lugar, se utilizará el algoritmo A* (A-estrella), el cual se basa en la interpretación de un mapa con valores binarios; donde este detecta velozmente la ruta más corta con espacios no permitidos, es decir restricciones en el mapa propuesto. Por último, se busca mostrar de forma gráfica ambas implementaciones para un mejor entendimiento (actualmente se continua trabajando en ello).
 
-##  __Grupo 11__
+##  👥 __Grupo 11__ 👥
 ### _Integrantes:_
 - Gabriel Vásquez
 - Juan Sara
 - Juan Torres
 - Alonso Rios
 
-## __Objetivos:__
+## 🔬 __Objetivos:__ 🔬
 1. Para el agoritmo de Dijkstra el objetivo es la estimación de ruta más corta en términos de tiempo respecto al tiempo perdido por reducción de velocidad en cada intersección. La data será extraida de un archivo con información sobre correteras en California.
 2. Para el algoritmo A* el objetivo es hallar y mostrar las coordenadas que forman la ruta más corta de un punto hacia otro. En el presente algoritmo debemos tener en cuenta que esta basado un mapa con obstaculos represetados de forma binaria (0 -> espcio libre / 1 -> espcio no disponible).
 
-## __Implementaciones bajo similar concepto a mayor escala:__
+## 🚧 __Implementaciones bajo similar concepto a mayor escala:__ 🚧
 Actualmente, implementaciones similares o de mayor escala y eficacia (no necesariamente el algoritmo Dijstra), se ven en aplicaciones de uso diario con la finalida de hallar la ruta más corta, sin trafico o menos interrupciones, tal como Google Maps, Uber, Waze, entre otros. Además se sabe que el algoritmo A* es frecuentemente utilizado en videojuegos donde el usuario marca un punto y la animación automaticamente detecta una ruta óptima mediante posiciones guardadas.
 
-## __Estructura:__
+## 🔧 __Estructura:__ 🔧
 <!--
 Esta implementación nos permite hallar el camino más corto en términos de tiempo de una intersección a otra. De esta forma, consideramos como algoritmo adicional el algoritmo A* (A-Estrella). Este es ampliamente usado para juegos con mapas con posiciones guardadas. Por ello, funcionaría para nuestra propuesta pero para, probablemente, ciudades, ya que al guardar coordenadas se tendría que usar mucha memoria para los espacios que no son caminos.
 -->
 
-### Algoritmo Dijkstra:
+### 📍 Algoritmo Dijkstra: 📍
 Esta implementacion nos permite hallar el camino más corto en términos de tiempo de una intersección a otra.
 
 __Representación del grafo y nodos:__ \
@@ -39,7 +39,7 @@ __Funciones:__ \
 Arhivos: functions.h | functions.cpp \
 Se definirán e implementarán las multiples funciones que sean neceasrias para el correcto funcionamiento del proyecto. (No se visualizan una gran cantida de funciones puesto que la gran parte necesaria para el funcionamiento se encuentran dentro de los archivo Graph.h y Graph.cpp)
 
-### Algoritmo A*:
+### 📍 Algoritmo A*: 📍
 La presente implementacion nos permite hallar el camino más corto en terminos de espacios disponibles en el mapa propuesto dentro del codigo. Respecto al costo  de camino optimo, se considera (dentro del código) el peso de 1 unidad para cada espacio abierto como nodo. 
 
 __Representación del mapa:__ \
