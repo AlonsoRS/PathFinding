@@ -30,7 +30,6 @@ Actualmente, implementaciones similares o de mayor escala y eficacia (no necesar
     <img src="img\mapicon.png" width="133px">
     <img src="img\mouse.jpg" width="118px">
 </div>
-<br/>
 
 ## 🔧 __Estructura:__ 🔧
 <!--
