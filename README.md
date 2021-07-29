@@ -1,11 +1,13 @@
 [![Work in Repl.it](https://classroom.github.com/assets/work-in-replit-14baed9a392b3a25080506f3b7b6d57f295ec2978f6f33ec97e36a161684cbe9.svg)](https://classroom.github.com/online_ide?assignment_repo_id=432781&assignment_repo_type=GroupAssignmentRepo)
 
 # Proyecto 2021-1 - POO_2
-<img src="img\logo_1.JPG" width="500px" style="margin-left: 100px">
+
+<div align="center">
+    <img src="img\logo_1.JPG" width="500px">
+</div>
 <!--
 <img src="logo_2.JPG">
 -->
-<br><br>
 El presente proyecto es realizado por estudiantes del curso de Programación Orientada a Objetos 2. En esta entrega se podrá observar dos implementaciones, donde ambas son utilizadas para hallar la ruta más corta. En primer lugar, utilizaremos el algoritmo Dijkstra que se basa en un archivo con información sobre nodos y pesos, para posteriormente interpretar la data y calcular la ruta más corta. En segundo lugar, se utilizará el algoritmo A* (A-estrella), el cual se basa en la interpretación de un mapa con valores binarios; donde este detecta velozmente la ruta más corta con espacios no permitidos, es decir restricciones en el mapa propuesto. Por último, se busca mostrar de forma gráfica ambas implementaciones para un mejor entendimiento (actualmente se continua trabajando en ello).
 
 ##  👥 __Grupo 11__ 👥
@@ -21,10 +23,6 @@ El presente proyecto es realizado por estudiantes del curso de Programación Ori
 
 ## 🚧 __Implementaciones bajo similar concepto a mayor escala:__ 🚧
 Actualmente, implementaciones similares o de mayor escala y eficacia (no necesariamente el algoritmo Dijstra), se ven en aplicaciones de uso diario con la finalida de hallar la ruta más corta, sin trafico o menos interrupciones, tal como Google Maps, Uber, Waze, entre otros. Además se sabe que el algoritmo A* es frecuentemente utilizado en videojuegos donde el usuario marca un punto y la animación automaticamente detecta una ruta óptima mediante posiciones guardadas.
-
-<img src="img\waze.webp" style="float; margin-left:120px" width="200px">
-<img src="img\mapicon.png" style="float" width="133px">
-<img src="img\mouse.jpg" style="float" width="118px">
 
 ## 🔧 __Estructura:__ 🔧
 <!--
