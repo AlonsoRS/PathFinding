@@ -25,6 +25,13 @@ El presente proyecto es realizado por estudiantes del curso de Programación Ori
 ## 🚧 __Implementaciones bajo similar concepto a mayor escala:__ 🚧
 Actualmente, implementaciones similares o de mayor escala y eficacia (no necesariamente el algoritmo Dijstra), se ven en aplicaciones de uso diario con la finalida de hallar la ruta más corta, sin trafico o menos interrupciones, tal como Google Maps, Uber, Waze, entre otros. Además se sabe que el algoritmo A* es frecuentemente utilizado en videojuegos donde el usuario marca un punto y la animación automaticamente detecta una ruta óptima mediante posiciones guardadas.
 
+<div align="center">
+    <img src="img\waze.webp" width="200px">
+    <img src="img\mapicon.png" width="133px">
+    <img src="img\mouse.jpg" width="118px">
+</div>
+<br/>
+
 ## 🔧 __Estructura:__ 🔧
 <!--
 Esta implementación nos permite hallar el camino más corto en términos de tiempo de una intersección a otra. De esta forma, consideramos como algoritmo adicional el algoritmo A* (A-Estrella). Este es ampliamente usado para juegos con mapas con posiciones guardadas. Por ello, funcionaría para nuestra propuesta pero para, probablemente, ciudades, ya que al guardar coordenadas se tendría que usar mucha memoria para los espacios que no son caminos.
