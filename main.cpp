@@ -5,62 +5,33 @@ respecto al tiempo perdido por reducción de velocidad
 en cada intersección. 
 
 Integrantes:
-- Gabriel Vásquez
-- Juan Sara
-- Juan Torres 
-- Alonso Rios
+- Gabriel Vásquez 100%
+- Juan Sara 100%
+- Juan Torres 100%
+- Alonso Rios 100%
 */
 
 #include <iostream>
 #include <random>
 #include <vector>
+#include <queue>
 
+#include "art.h"
 #include "Graph.h"
-#include "functions.h"
-#include "DIJKSTRA_1.h"
-#include "GraphA/print_map.h"
-
-#define all(x) begin(x), end(x)
 
 using namespace std;
 
-#include <queue>
+#define all(x) begin(x), end(x)
 
 int main() {
-
-  print_mapa();
   /*
-  Graph G;
-  read_file(G, "scratch.txt");
-  G.show_neighbors(1, 2, 3, 6);
-
-  for(int i = 0; i < 7; i++){
-    if(i == 6 || i == 5) continue;
-    cout << "Nodo " << i << " " << G.get_peso_nodo(i) << endl;
-  }
-
-  auto [dist, prev] = DIJKSTRA(G, 1);
-  for(int i = 0; i < 5; i++) {
-    cout << "Nodo " << i << " " << dist[i] << endl;
-  }
-  cout << endl;
+  graph<int, long double> G;
+  G.read_file("scratch.txt");
+  G.show_neighbors(1);
+  auto ret_tp = dijkstra(G, 1);
+  for(int i = 1; i < 100000; i++)
+    cout << "Node " << i << ": " << ret_tp.d[i] << '\n';
   */
+  main_menu();
   return 0;
 } 
-
-/*
- Graph G;
-  read_file(G, "scratch.txt");
-  G.show_neighbors(1, 2, 3, 6);
-
-  for(int i = 0; i < 7; i++){
-    if(i == 6 || i == 5) continue;
-    cout << "Nodo " << i << " " << G.get_peso_nodo(i) << endl;
-  }
-
-  auto [dist, prev] = DIJKSTRA(G, 1);
-  for(int i = 0; i < 5; i++) {
-    cout << "Nodo " << i << " " << dist[i] << endl;
-  }
-  cout << endl;
-*/

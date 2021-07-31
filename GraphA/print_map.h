@@ -1,55 +1,32 @@
 #pragma once
 
-#include <list>
-#include <algorithm>
-#include <iostream>
-#include <stdlib.h>
-#include "AStar.h"
-
-using namespace std;
+#include "set_map.h"
 
 void print_mapa () {
   int x = 0, y = 0;
-  map m1(25,25);
+  int size = 0;
   pointA p1, e;
   Astar as;
   bool band = false;
+
+  cout << "Ingresa el tamaño de tu Mapa: ";cin>>size;
+  while(size > 25){
+    cout << "Ingresa el tamaño de tu Mapa: ";cin>>size;
+  }
+
+  map m1(size,size);
+
+  set_map(size,x,y,p1,e,m1);
+
+  system("clear");
+  cout<<"***** MAPA CON RUTA COMPLETADA *****"<<endl;
   
-  cout << "Ingresa una coordenada x para tu punto inicial: "; cin >> x;
-  while(x > 24){
-    system("clear");
-    cout << "Ingresa una coordenada x para tu punto inicial: "; cin >> x;
-  }
-
-  cout << "Ingresa una coordenada y para tu punto inicial: "; cin >> y;
-  while(y > 24){
-    system("clear");
-    cout << "Ingresa una coordenada y para tu punto inicialnicial: "; cin >> y;
-  }
-  p1.set_x(x);
-  p1.set_y(y);
-  
-  cout << "Ingresa una coordenada x para tu punto final: "; cin >> x;
-  while(x > 24){
-    system("clear");
-    cout << "Ingresa una coordenada x para tu punto final: "; cin >> x;
-  }
-
-  cout << "Ingresa una coordenada y para tu punto final: "; cin >> y;
-  while(y > 24){
-      system("clear");
-      cout << "Ingresa una coordenada y para tu punto final: "; cin >> y;
-  }
-
-  e.set_x(x);
-  e.set_y(y);
-
   if(as.buscar(p1, e, m1)){
     list<pointA> path_;
     int g = as.path(path_);
-    for(int x = -1; x < 26; x++){
-      for(int y = -1; y < 26; y++){
-        if(x < 0 || y < 0 || x > 24 || y > 24 || m1(x,y) == 1){
+    for(int x = -1; x < size+1; x++){
+      for(int y = -1; y < size+1; y++){
+        if(x < 0 || y < 0 || x > size-1 || y > size-1 || m1(x,y) == 1){
           cout<< "|";
         }
         else{

@@ -1,4 +1,3 @@
-
 #include "armar_map.h"
 #include <iostream>
 
@@ -30,8 +29,5 @@ char** armar_mapa(string& archivo){
       column = 0;
     }
   }
-
-
   return mapita;
-
 }

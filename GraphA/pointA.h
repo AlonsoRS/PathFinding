@@ -20,3 +20,5 @@ struct pointA {
   void set_x(int value){x = value;}
   void set_y(int value){y = value;}
 };
+
+

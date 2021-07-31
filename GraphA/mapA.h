@@ -17,9 +17,13 @@ struct map {
    
     string nmapa = "";
 
-    cout << "Rute1" << endl;
-    cout << "Rute2" << endl;
-    cout << "Rute3" << endl;
+    cout << "***********" << endl;
+    cout << "*         *" << endl;
+    cout << "*  Rute1  *" << endl;
+    cout << "*  Rute2  *" << endl;
+    cout << "*  Rute3  *" << endl;
+    cout << "*         *" << endl;
+    cout << "***********" << endl;
     cout << "Selecciona el nombre de tu mapa: "; cin>>nmapa;
   
     for_each(nmapa.begin(), nmapa.end(), [](char & c) {
