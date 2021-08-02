@@ -54,6 +54,11 @@ Se definirán e implementarán las multiples funciones que sean neceasrias para 
 ### 📍 Algoritmo A*: 📍
 La presente implementacion nos permite hallar el camino más corto en terminos de espacios disponibles en el mapa propuesto dentro del codigo. Respecto al costo  de camino optimo, se considera (dentro del código) el peso de 1 unidad para cada espacio abierto como nodo. 
 
+<div align="center">
+    <img src="img\Age_of_empires.jpg" width="200px">
+    <img src="img\Dota2.jpg" width="145px">
+</div>
+
 __Representación del mapa:__ \
 Archivos: mapA.h \
 Se presenta el mapa en forma de matriz, este será utilizado para hallar la ruta más corta con obstaculos o puntos no disponibles. Además para evitar la lectura de un mapa dentro del código, se podrá leer 3 mapas predeterminados y guardados en archivos .txt con los nombres (rute1.txt | rute2.txt | rute3.txt)
