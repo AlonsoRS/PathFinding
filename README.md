@@ -9,7 +9,7 @@
 <img src="logo_2.JPG">
 -->
 <br/>
-El presente proyecto es realizado por estudiantes del curso de Programación Orientada a Objetos 2. En esta entrega se podrá observar dos implementaciones, donde ambas son utilizadas para hallar la ruta más corta. En primer lugar, utilizaremos el algoritmo Dijkstra que se basa en un archivo con información sobre nodos y pesos, para posteriormente interpretar la data y calcular la ruta más corta. En segundo lugar, se utilizará el algoritmo A* (A-estrella), el cual se basa en la interpretación de un mapa con valores binarios; donde este detecta velozmente la ruta más corta con espacios no permitidos, es decir restricciones en el mapa propuesto. Por último, se busca mostrar de forma gráfica ambas implementaciones para un mejor entendimiento (actualmente se continua trabajando en ello).
+El presente proyecto es realizado por estudiantes del curso de Programación Orientada a Objetos 2. En esta entrega se podrá observar dos implementaciones, donde ambas son utilizadas para hallar la ruta más corta. En primer lugar, utilizaremos el algoritmo Dijkstra que se basa en un archivo con información sobre nodos y pesos, para posteriormente interpretar la data y calcular la ruta más corta. En segundo lugar, se utilizará el algoritmo A* (A-estrella), el cual se basa en la interpretación de un mapa con valores binarios; donde este detecta velozmente la ruta más corta con espacios no permitidos, es decir restricciones en el mapa propuesto. Por último, se busca mostrar de forma gráfica ambas implementaciones para un mejor entendimiento.
 
 ##  👥 __Grupo 11__ 👥
 ### _Integrantes:_
