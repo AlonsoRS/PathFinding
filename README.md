@@ -39,6 +39,12 @@ Esta implementación nos permite hallar el camino más corto en términos de tie
 ### 📍 Algoritmo Dijkstra: 📍
 Esta implementacion nos permite hallar el camino más corto en términos de tiempo de una intersección a otra.
 
+Diagrama de clases:
+
+<div align="center">
+    <img src="img\dijkstra.jpeg" width="500ppx">
+</div>
+
 __Representación del grafo y nodos:__ \
 Archivos: Graph.h | Graph.cpp \
 Para representar la red de caminos de nuestro proyecto empleamos un objeto de clase Graph. Para esto se crea la clase Graph que puede ser usado tanto para un grafo dirigido como uno no dirigido (en este caso uno no dirigido). Asimismo, se crea una estructura nodo para representar cada nodo que puede ser ingresado a un objeto de clase Graph. Cabe mencionar esta clase permite agregar aristas y leer archivos.
@@ -57,6 +63,12 @@ La presente implementacion nos permite hallar el camino más corto en terminos d
 <div align="center">
     <img src="img\Age_of_empires.jpg" width="200px">
     <img src="img\Dota2.jpg" width="145px">
+</div>
+
+Diagrama de clases:
+
+<div align="center">
+    <img src="img\aestrella.jpeg" width="500ppx">
 </div>
 
 __Representación del mapa:__ \
