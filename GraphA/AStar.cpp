@@ -24,7 +24,7 @@ bool Astar::existe_punto(pointA& p, int costo){
   it = find(close.begin(), close.end(), p); //busca el punto ingresado en la lista de puntos que ya han sido revisados
 
   if (it != close.end()) { //Si el punto es encontrado 
-    if( (*it).costo + (*it).distancia < costo) return true; // Si el peso de punto + su distancia es menor al peso, entonces retorna verdadero y existe el punto
+    if( (*it).costo + (*it).distancia < costo) return true; // Si el peso de punto + su distancia es menor al peso ideal para llegar a dicho punto, entonces retorna verdadero y existe el punto
     else {
       close.erase(it); //elimina el punto encontrado
       return false;

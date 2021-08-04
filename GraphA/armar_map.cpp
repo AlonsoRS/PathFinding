@@ -3,7 +3,7 @@
 
 
 char** armar_mapa(string& archivo){
-  archivo=archivo+".txt";
+  archivo="GraphA/"+ archivo +".txt";
   ifstream file(archivo,ios::in);
 
   char** mapita = new char*[25];

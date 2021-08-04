@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "Graph.h"
+#include "Dijkstra/Graph.h"
 #include "GraphA/print_map.h" 
 using namespace std;
 
@@ -66,7 +66,7 @@ void print_for_dijkstra () {
   cout << "*  1. Calculate degree of some roads intersections  *" << endl;
   cout << "*  2. Show the shortest path and time               *" << endl;
   cout << "*  3. Show neighbors                                *" << endl;
-  cout << "*  4. Show nodes ID's                               *" << endl;
+  cout << "*  4. Show most recent Shortest Path Tree root      *" << endl;
   cout << "*  5. Show weights of nodes                         *" << endl;
   cout << "*                                                   *" << endl;
   cout << "*****************************************************" << endl;
@@ -131,6 +131,7 @@ void main_menu() {
     menu(); cout << endl; 
     cout << "---> "; cin >> opt;
     system("clear");
+    
     switch(opt) {
       case 1: {
         bool band_1=true; int opt_1;
@@ -139,8 +140,10 @@ void main_menu() {
         //Dijkstra algorithm
         print_for_dijkstra();
 
+        //graph<int, double> G;
+        //G.read_file("CA_routes.txt");
         graph<int, double> G;
-        G.read_file("scratch.txt");
+        G.read_file("Dijkstra/CA_routes.txt");
 
         //**********************************************************************
         while (band_1) {
@@ -156,13 +159,15 @@ void main_menu() {
             }
             case 2: {
               //_______________________________
-              auto ret_tp = dijkstra(G, 1);
-              G.show_shortest_path(14, ret_tp);
+              auto res = dijkstra(G, 793);
+              int tget = 955;
+              G.show_shortest_path(tget, res);
               //_______________________________
               cout << endl;
               band_1 = want_to_continue();
               break;
             }
+            // Shows neighbors of a variated # of nodes
             case 3: {
               //_______________________________
               G.show_neighbors(1, 2, 3, 4);
@@ -171,9 +176,10 @@ void main_menu() {
               band_1 = want_to_continue();
               break;
             }
+            // Shows root of Shortest Path Tree (SPT) if there is a SPT
             case 4: {
               //_______________________________
-              auto vec_id = G.get_nodes_id();
+              G.show_spt_root();
               //_______________________________
               band_1 = want_to_continue();
               break;

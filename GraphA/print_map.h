@@ -7,7 +7,14 @@ void print_mapa () {
   int size = 0;
   pointA p1, e;
   Astar as;
-  bool band = false;
+
+  cout << endl;
+  cout << "************/\\WARNING/\\************" << endl;
+  cout << "**                               **" << endl;
+  cout << "**  Tamaño maximo de mapa = 25   **" << endl;
+  cout << "**                               **" << endl;
+  cout << "***********************************" << endl;
+  cout << endl;
 
   cout << "Ingresa el tamaño de tu Mapa: ";cin>>size;
   while(size > 25){

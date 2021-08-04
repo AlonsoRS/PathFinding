@@ -15,23 +15,27 @@ Integrantes:
 #include <random>
 #include <vector>
 #include <queue>
+#include <unordered_map>
 
+//#include "art.h"
+#include "Dijkstra/Graph.h"
+#include "Dijkstra/dijkstra.h"
 #include "art.h"
-#include "Graph.h"
 
 using namespace std;
 
 #define all(x) begin(x), end(x)
 
 int main() {
-  /*
-  graph<int, long double> G;
-  G.read_file("scratch.txt");
-  G.show_neighbors(1);
-  auto ret_tp = dijkstra(G, 1);
-  for(int i = 1; i < 100000; i++)
-    cout << "Node " << i << ": " << ret_tp.d[i] << '\n';
+  
+  /*graph<int, double> G;
+  G.read_file("Dijkstra/CA_routes.txt");
+  auto res = dijkstra(G, 793);
+  int tget = 955;
+  G.show_shortest_path(tget, res);
   */
+
   main_menu();
+
   return 0;
 } 
