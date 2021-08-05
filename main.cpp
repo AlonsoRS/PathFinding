@@ -9,15 +9,13 @@ Integrantes:
 - Juan Sara 100%
 - Juan Torres 100%
 - Alonso Rios 100%
+
+Data set: https://snap.stanford.edu/data/roadNet-CA.html
+
 */
 
 #include <iostream>
-#include <random>
-#include <vector>
-#include <queue>
-#include <unordered_map>
 
-//#include "art.h"
 #include "Dijkstra/Graph.h"
 #include "Dijkstra/dijkstra.h"
 #include "art.h"
@@ -28,10 +26,14 @@ using namespace std;
 
 int main() {
   
-  /*graph<int, double> G;
+  // Código de prueba
+  /*
+  graph<int, double> G;
   G.read_file("Dijkstra/CA_routes.txt");
   auto res = dijkstra(G, 793);
-  int tget = 955;
+  // 37039
+  int tget = 41991;
+  G.show_neighbors(tget, 1051, 1044, 1050, 1047, 2249, 41991, 1087, 2248, 2249);
   G.show_shortest_path(tget, res);
   */
 

@@ -11,7 +11,7 @@ using namespace std;
 
 class Astar { 
 public:
-  map m; //matriz que simula rutas
+  mapa m; //matriz que simula rutas
   pointA p_fin; // punto final
   pointA p_ini; //punto inicial
   pointA neigh[8]; //puntos cardinales o vecinos
@@ -36,6 +36,6 @@ public:
   bool validar_p(pointA& p);
   bool existe_punto (pointA& p, int costo);
   bool rellenar_lista_Open (nodeA& nd);
-  bool buscar(pointA& z, pointA& e, map& matrix);
+  bool buscar(pointA& z, pointA& e, mapa& matrix);
   int path(list<pointA>& camino);
 };

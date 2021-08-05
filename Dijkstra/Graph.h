@@ -1,7 +1,7 @@
 #pragma once
 
 // Libraries
-
+#include <string>
 #include <iostream>
 #include <iterator>
 #include <vector>
@@ -10,10 +10,15 @@
 #include <utility>
 #include <random>
 #include <functional>
+#include <string>
 #include <fstream>
 #include <initializer_list>
 #include <queue>
 #include <algorithm>
+#include <fstream>
+#include "boost/graph/graphviz.hpp"
+#include "boost/graph/adjacency_list.hpp"
+
 
 #include "types_.h"
 
@@ -22,6 +27,8 @@
 #define INF numeric_limits<double>::max()
 #define contains(cont, val) cont.find(val) != cont.end()
 #define random_choice() (choice())? distr_SS(gen) : distr_CS(gen)
+
+typedef boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS> DrawnG;
 
 using namespace std;
 
@@ -37,6 +44,7 @@ extern uniform_real_distribution<> distr_CS;
 extern uniform_real_distribution<> distr_SS;
 
 int choice();
+
 
 //-----------------------------------------------
 
@@ -56,19 +64,6 @@ template <typename T, typename T2>
 using node_ref = reference_wrapper<node<T, T2>>;
 
 //------------------------------------------------------
-/*
-// Prueba
-
-// template <typename ID_t, typename weight_t>
-// class graph;
-
-template <typename ID_t, typename w_t>
-auto order = [] (const node<ID_t, w_t> &A,const node<ID_t, w_t> &B){ 
-  return A.peso > B.peso;
-};
-*/
-// Fin Prueba
-
 
 // Template class for the graph representation
 template<typename ID_t, typename weight_t>
@@ -110,9 +105,44 @@ class graph {
   // Destructor
   ~graph() = default;
   
+  void limpiar_archivo(vector<ID_t>& nodos) {
+    fstream entrada;
+    fstream salida;
+    entrada.open("Dijkstra/GraphToPng.dot", ios::in);
+    vector<string> lectura;
+    string line;
+    
+    while (std::getline(entrada, line)){
+        lectura.push_back(line);
+    }
+    auto maxnum=nodos[nodos.size()-1];
+    vector<string> escritura;
+    for(auto it=lectura.begin()+maxnum+2;it!=lectura.end();it++){
+      escritura.push_back(*it);
+    }
+    entrada.close();
+  
+    vector<string> numeros;
+    for(auto nodo:nodos){
+      numeros.push_back(to_string(nodo));
+    }
+
+    salida.open("Dijkstra/Graph.dot",ios::out);
+
+    salida<<"graph G {";
+    for(auto elem:numeros){
+      salida<< elem +";"<<endl;
+    }
+    for(auto elem:escritura){
+      salida<< elem<<endl;
+    }
+    salida.close();
+  }
+  
   // Add route - specially implemented for the purpose of our project
   // (random weighted nodes)
   // *Can be easily adapted to a general-purpose graph
+
   void add_route(ID_t id_1, ID_t id_2) {
 
     auto find_ID = contains(nodes, id_1);
@@ -121,7 +151,7 @@ class graph {
     // Alias
     using node_t = node<ID_t, weight_t>;
     
-    // Si ambos nodos no existen...
+    // If both nodes exist...
     if(!find_ID && !find_ID_2){
       weight_t random_N = random_choice();
       weight_t random_M = random_choice();
@@ -134,7 +164,7 @@ class graph {
       return;
     }
 
-    // Si uno de ambos nodos no existe...
+    // If one of both nodes doesn´t exist...
     if(!find_ID || !find_ID_2) {
       weight_t random_N = random_choice();
       if(!find_ID) {
@@ -152,17 +182,17 @@ class graph {
       return;
     }
 
-    // Se hace un "check" de si ya existe la ruta entre
-    // el nodo ID e ID_2 (ambos existen)
+    // Checks if an edge exists between to existing nodes
     auto func = [&id_2] (const node<ID_t, weight_t> &A) { return A.id == id_2;};
     auto it = find_if(all(adj[id_1]), func);
-    // Si ya existe termina la función
+
+    // If an edge already exists...
     if(it != end(adj[id_1])) {
       cout << "Ya existe una ruta entre ambos nodos.\n"; 
       return;
     }
 
-    // Si no existe ruta se vuelven "neighbors"
+    // If there wasn´t an edge now an edge is created
     adj[id_1].push_back(nodes[id_2]);
     adj[id_2].push_back(nodes[id_1]);
 
@@ -178,9 +208,6 @@ class graph {
       nodes[id] = F;
       N_nodes++;
     }
-    // Ver si se puede crear un while-loop de
-    // verificacion hasta que se ingrese un nodo
-    // que no existe en el grafo
     else cout << "Ya existe ese nodo." << endl;
   }
     
@@ -190,15 +217,24 @@ class graph {
 
   template <typename ...ids>
   void weight_of(ids... I) { 
+
     cout << "\n+-------------------------------------\n";
-    //cout << number_of_nodes() << "\n";
-    //cout << number_of_edges() << "\n";
+    
     initializer_list<ID_t> aux {forward<ids>(I) ...};
-    for(const auto &node_identity : aux) {
-      cout << "Weight of intersec. #" << node_identity << ": " << nodes[node_identity].peso << "\n";
-    }
+  
+    // Iteration over nodes IDs
+    for(const auto &node_identity : aux) 
+        if(contains(nodes, node_identity))
+        {
+          cout << "Weight of intersec. #" << node_identity << ": " << nodes[node_identity].peso << "\n";
+        }
+        else{
+          cout << "Node " << node_identity << " doesn´t exist yet.\n";
+        }
+
     cout << "+-------------------------------------\n";
     cout << endl;
+  
   };
 
   void show_spt_root() {
@@ -228,6 +264,7 @@ class graph {
     initializer_list<ID_t> aux = {forward<N>(ids) ...};
 
     for(auto ID_ : aux){
+
       if(contains(nodes, ID_)){
         // Degree of
         cout << "Roads in intersection #" << ID_  << ": ";
@@ -267,33 +304,67 @@ class graph {
 
   // Print the route between two intersections
   void show_shortest_path(const ID_t &target_node, return_t<ID_t, weight_t> &SPT_info){
-    cout << "\nFrom intersec. " << spt_root << " to intersec. " << target_node << "\n";
+    DrawnG g;
+    cout << "\n";
+    cout << "From intersec. " << spt_root << " to intersec. " << target_node;
+    cout << "\n";
+
+    // Backtrack path
     vector<ID_t> path;
+    
     auto temp = target_node;
-    while(temp != spt_root) {
+    
+    while(temp != spt_root) 
+    {
       path.push_back(temp);
       temp = SPT_info.p[temp];
     }
-    // *
+
     path.push_back(temp);
+
+    // End -> Start order to Start -> End 
     reverse(all(path));
-    for(const auto intersec : path)
-      if(intersec != path[path.size()-1]) 
+    
+    vector<ID_t> nodos;
+    for(const auto intersec : path){
+      if(intersec != path[path.size()-1]) {
+        nodos.push_back(intersec);
+        // Print path
         cout << intersec << " -> ";
+        }
+      }
+
+    for(int i = 0; i < nodos.size()-1; i++){
+      add_edge(nodos[i], nodos[i+1],g);
+    }
+
+    //añadimos ultimo nodo al graficador
+    add_edge(nodos[nodos.size()-1],path[path.size()-1],g);
+    nodos.push_back(path[path.size()-1]);
+  
     cout << path[path.size()-1] << "\n";
+
+    // Shortest path length 
     cout << "Time lost: " << SPT_info.d[target_node] << " seconds.\n";
+
+    ofstream outf("Dijkstra/GraphToPng.dot");
+    write_graphviz(outf, g);
+    
+    limpiar_archivo(nodos);
   }
 
   // Read a text file (edges)
   void read_file(string filename) {
+
     ifstream f(filename);
+    
     int nodo_1, nodo_2; 
+    
     while(f >> nodo_1 >> nodo_2)
-      // En caso se lea un .txt & directed graph:
-      // if(nodo_1 < nodo_2) 
+    
       add_route(nodo_1, nodo_2);
+    
     f.close();
   }
 
 };
-

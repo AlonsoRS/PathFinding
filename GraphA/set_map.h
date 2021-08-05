@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void print_map_default(int& size, map& m1){
+void print_map_default(int& size, mapa& m1){
   for(int x = -1; x < size+1; x++){
       for(int y = -1; y < size+1; y++){
         if(x < 0 || y < 0 || x > size-1 || y > size-1 || m1(x,y) == 1){
@@ -23,7 +23,7 @@ void print_map_default(int& size, map& m1){
 }
 
 
-void pedir_coordenadas_inicial(int& size, map& m1, int& x, int& y, pointA& p1){
+void pedir_coordenadas_inicial(int& size, mapa& m1, int& x, int& y, pointA& p1){
 
   cout << "Ingresa una coordenada x para tu punto inicial: "; cin >> x;
   while(x > size-1){
@@ -45,7 +45,7 @@ void pedir_coordenadas_inicial(int& size, map& m1, int& x, int& y, pointA& p1){
 
 
 
-void pedir_coordenadas_final(int& size, map& m1, int& x, int& y, pointA& e){
+void pedir_coordenadas_final(int& size, mapa& m1, int& x, int& y, pointA& e){
   cout << "Ingresa una coordenada x para tu punto final: "; cin >> x;
   while(x > size-1){
     system("clear");
@@ -64,7 +64,7 @@ void pedir_coordenadas_final(int& size, map& m1, int& x, int& y, pointA& e){
   e.set_y(y);
 }
 
-void set_map(int& size, int& x, int& y, pointA& p1, pointA& e, map& m1){
+void set_map(int& size, int& x, int& y, pointA& p1, pointA& e, mapa& m1){
   system("clear");
   
   cout<<"****** MAPA REFERENCIAL *****" << endl;

@@ -75,7 +75,7 @@ bool Astar::rellenar_lista_Open(nodeA& nd){
 // -------------------------------------------------------------------------
 
 //Busca desde nuestro  punto inicial hasta nuestro punto final a traves de la matriz
-bool Astar::buscar(pointA& z, pointA& e, map& matrix){
+bool Astar::buscar(pointA& z, pointA& e, mapa& matrix){
   nodeA n; //crea un nuevo nodo
   p_fin = e; //el punto e define el punto final
   p_ini = z; //el punto z define el punto inicial

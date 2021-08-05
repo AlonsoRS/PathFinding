@@ -21,7 +21,7 @@ void print_mapa () {
     cout << "Ingresa el tamaño de tu Mapa: ";cin>>size;
   }
 
-  map m1(size,size);
+  mapa m1(size,size);
 
   set_map(size,x,y,p1,e,m1);
 

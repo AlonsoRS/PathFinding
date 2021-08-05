@@ -7,13 +7,13 @@
 
 using namespace std;
 
-struct map {
+struct mapa {
   char m[25][25]; //Inicializa el mapa
   int w, h;
 
-  map()=default;
+  mapa()=default;
 
-  map(int w,int h) {
+  mapa(int w,int h) {
    
     string nmapa = "";
     cout << endl;

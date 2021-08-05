@@ -140,8 +140,6 @@ void main_menu() {
         //Dijkstra algorithm
         print_for_dijkstra();
 
-        //graph<int, double> G;
-        //G.read_file("CA_routes.txt");
         graph<int, double> G;
         G.read_file("Dijkstra/CA_routes.txt");
 
@@ -151,7 +149,7 @@ void main_menu() {
           switch(opt_1) {
             case 1: {
               //_______________________________
-              G.degree_of(1, 2, 3, 4);
+              G.degree_of(1, 41991, 3, 1050);
               //_______________________________
               cout << endl;
               band_1 = want_to_continue();
@@ -160,7 +158,7 @@ void main_menu() {
             case 2: {
               //_______________________________
               auto res = dijkstra(G, 793);
-              int tget = 955;
+              int tget = 41991;
               G.show_shortest_path(tget, res);
               //_______________________________
               cout << endl;
@@ -170,7 +168,7 @@ void main_menu() {
             // Shows neighbors of a variated # of nodes
             case 3: {
               //_______________________________
-              G.show_neighbors(1, 2, 3, 4);
+              G.show_neighbors(1, 1051, 3, 41991);
               //_______________________________
               cout << endl;
               band_1 = want_to_continue();
@@ -186,7 +184,7 @@ void main_menu() {
             }
             case 5: {
               //_______________________________
-              G.weight_of(1, 4, 6, 7, 8, 14);
+              G.weight_of(1, 4, 41991, 1051, 8, 201255);
               //_______________________________
               band_1 = want_to_continue();
               break;
@@ -230,4 +228,3 @@ void main_menu() {
     }
   }
 }
-
