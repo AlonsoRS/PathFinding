@@ -25,6 +25,11 @@ void print_mapa () {
 
   set_map(size,x,y,p1,e,m1);
 
+  while(p1 == e){
+    cout<<"LOS PUNTOS SON IGUALES, ESOCGER OTROS PUNTOS:"<<endl;
+    set_map(size,x,y,p1,e,m1);
+  }
+
   system("clear");
   cout<<"***** MAPA CON RUTA COMPLETADA *****"<<endl;
   

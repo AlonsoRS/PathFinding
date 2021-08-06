@@ -85,4 +85,5 @@ void set_map(int& size, int& x, int& y, pointA& p1, pointA& e, mapa& m1){
     cout<<"No puedes escoger este punto ya que es un obstaculo"<<endl;
     pedir_coordenadas_final(size,m1,x,y,e);
   }
+
 }
