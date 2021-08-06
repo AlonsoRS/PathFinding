@@ -96,3 +96,8 @@ En los presentes archivos se presenta la función que permite la lectura de los 
 __Mostrando el camino A*:__ \
 Archivos: print_map.h
 Aqui mediante un menu de elección de camino, el usuario podrá elegir uno de los mapas predeterminados y insertar su punto de partida y llegada para que el algoritmo pueda analizar el camino más óptimo. Al mismo, tiempo la función incluido en el archivo podrá mostrar en consola, de forma ordenada, el camino que el algoritmo opto por seguir. 
+
+## __Bibliografia:__
+- 🎮 Búsqueda de caminos en los Videojuegos: Algoritmo A* (Estrella). YouTube. https://www.youtube.com/watch?v=1gszEk8rUS4
+- CGA.(2019). “Heurístico”. Recuperado el 2 de Agosto del 2021 de:http://www.juntadeandalucia.es/averroes/centros-tic/11003916/mediawiki/index.php?title=Heur%C3%ADstico#:~:text=La%20heur%C3%ADstica%20es%20vista%20como,creatividad%2C%20pensamiento%20divergente%20o%20lateral.
+- SNAP. (s.f.). California Road Network. Recuperado de https://snap.stanford.edu/data/roadNet-CA.html
