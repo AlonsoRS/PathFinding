@@ -39,7 +39,7 @@ Esta implementación nos permite hallar el camino más corto en términos de tie
 -->
 
 ### 📍 Algoritmo Dijkstra: 📍
-Esta implementacion nos permite hallar el camino más corto en términos de tiempo de una intersección a otra.
+Esta implementacion nos permite hallar el camino más corto en términos de tiempo de una intersección a otra.  
 Para comprender nuestra implementación es necesario resaltar el enfoque sobre las intersecciones que existen en una ruta grande de carreteras. Se plantea una perdida de tiempo por cada intersección (en el presente caso representado por los nodos), además el tiempo que se pierde (y es mostrado) tambien es utilizado junto con la distancia entre intersecciones (que representaria la propia distancia de carreteras o pistas), todo esto con la finalidad de hallar el camino más corto. 
 
 Diagrama de clases:
